@@ -1,31 +1,37 @@
-unsigned int		octal(int n)
+void				octal(int n)
 {
-	unsigned int	result;
-	int				i;
-
-	i = 1;
-	result = 0;
-	while (n != 0)
+	if (n > 0)
 	{
-		result += n % 8 * i;
-		n /= 8;
-		i *= 10;
+		octal(n / 8);
+		ft_putnbr(n % 8);
 	}
-	return (result);
 }
 
-unsigned int		decimal(int n)
+void				decimal(int n)
 {
-	unsigned int	result;
-	int				i;
-
-	i = 1;
-	result = 0;
-	while (n != 0)
+	if (n > 0)
 	{
-		result += n % 10 * i;
-		n /= 10;
-		i *= 10;
+		decimal(n / 10);
+		ft_putnbr(n % 10);
 	}
-	return (result);
+}
+
+void				hexa(int n)
+{
+	if (n > 0)
+		hexa(n / 16);
+	if (n % 16 >= 10)
+		ft_putchar(n % 16 + 87);
+	else if (n > 0)
+		ft_putnbr(n % 16);
+}
+
+void				hexa2(int n)
+{
+	if (n > 0)
+		hexa2(n / 16);
+	if (n % 16 >= 10)
+		ft_putchar(n % 16 + 55);
+	else if (n > 0)
+		ft_putnbr(n % 16);
 }
