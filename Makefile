@@ -57,6 +57,7 @@ SRC =	src/ft_atoi.c\
 		src/ft_strsplit.c\
 		src/ft_lstdel.c\
 		src/ft_lstdelone.c\
+		src/ft_isspace.c\
 		src/ft_lstnew.c
 
 SRCO = $(SRC:.c=.o)
